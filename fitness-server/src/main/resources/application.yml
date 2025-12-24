@@ -1,0 +1,33 @@
+server:
+
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+
+    url: ${DB_URL:jdbc:mysql://localhost:3306/greatfitness?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC}
+    username: ${DB_USER:fitness}
+    password: ${DB_PASSWORD:fitness}
+  jpa:
+
+    defer-datasource-initialization: true
+    hibernate:
+
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  sql:
+    init:
+
+      mode: never
+      schema-locations: classpath:schema.sql
+
+logging:
+  level:
+    org.hibernate.SQL: warn
+
+app:
+  auth:
+    session-days: 30

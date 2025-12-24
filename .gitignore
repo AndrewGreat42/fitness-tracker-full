@@ -1,0 +1,4 @@
+# Project exclude paths
+/fitness-client/target/
+/fitness-common/target/
+/fitness-server/target/
